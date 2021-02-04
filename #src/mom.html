@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+          crossorigin="anonymous">
+    <script defer src="./js/todo-app.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function(){
+        // заголовок списка - он же идентификатор для LocalStorage
+        title = 'Мамин Список Дел';
+        // Входной массив c делами если нет больше никаких дел в списке
+        // let doArr = [{name:'Первое Дело  - любить меня', done:false},
+        //              {name:'Второе Дело  - любить Папу', done:true},
+        //              {name:'Третье Дело  - любить Дочь', done:false},
+        //             ];
+        // let doArr = [];
+        createTodoApp(title);
+
+      // document.addEventListener('DOMContentLoaded', function(){
+      //   // заголовок он же идентификатор
+      //   title = 'Мамин Список Дел';
+      //   // Входной массив делами если нет больше никаких дел в списке
+      //   // let doArr = [{name:'Первое Дело  - любить меня', done:false},
+      //   //              {name:'Второе Дело  - любить Папу', done:true},
+      //   //              {name:'Третье Дело  - любить Дочь', done:false},
+      //   //             ];
+
+      //   // let doArr = [];
+
+      //   // Проверяем хранилище
+      //   let my_storage = getFromLocalStorage(title);
+      //   if (my_storage.length) {
+      //     console.log('my_storage - ', my_storage)
+      //     createTodoApp(document.getElementById('todo-app'), title = title, my_storage);
+      //   } else {
+      //     console.log('typeof doArr', typeof doArr)
+      //     if (typeof doArr !== "undefined") {
+      //       console.log('doArr - ', doArr)
+      //       createTodoApp(document.getElementById('todo-app'), title = title, doArr);
+      //     } else {
+      //       createTodoApp(document.getElementById('todo-app'), title = title);
+      //     }
+      //   }
+      });
+    </script>
+</head>
+<body>
+  <div class="container mb-5">
+    <nav class="nav">
+      <a href="index.html" class="nav-link">Мой Список Дел</a>
+      <a href="mom.html" class="nav-link">Мамин Список Дел</a>
+      <a href="dad.html" class="nav-link">Папин Список Дел</a>
+    </nav>
+    <div id="todo-app" class="container"></div>
+  </div>
+</body>
+</html>
+

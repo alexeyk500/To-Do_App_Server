@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do App server-release</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script defer src="./js/main.js"></script>
+    <script>
+      async function loadToDoItems() {
+        const response = await fetch('http://localhost:3000/api/todos');
+        const data = await response.json();
+        console.log(data);
+      }
+      // loadToDoItems();
+
+      async function createToDoItem() {
+        const response = await fetch('http://localhost:3000/api/todos', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: 'Сходить за хлебом',
+            owner: 'Алексей'
+          })
+        });
+        const data = await response.json();
+        console.log(data);
+      }
+      //createToDoItem();
+
+      async function getToDoItem(id) {
+        const response = await fetch('http://localhost:3000/api/todos/'+id);
+        // const data = await response.json();
+        // console.log(data);
+        function getData (response) {
+          return response.json();
+        };
+        if (response.status === 404) {console.log('Такого дела не существует')}
+        const data = await getData (response);
+        console.log(id, data);
+      };
+      getToDoItem(1612449772888);
+
+      async function makeDoneToDoItem() {
+        const response = await fetch('http://localhost:3000/api/todos/1612449772888', {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({done: true})
+        });
+        const data = await response.json();
+        console.log(data);
+      }
+      // makeDoneToDoItem()
+
+      async function deleteToDoItem() {
+        const response = await fetch('http://localhost:3000/api/todos/1612449772888', {
+          method: 'DELETE',
+        });
+        const data = await response.json();
+        console.log(data);
+      }
+      // deleteToDoItem()
+    </script>
+</head>
+<body>
+
+</body>
+</html>
