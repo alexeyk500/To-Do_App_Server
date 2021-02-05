@@ -11,41 +11,8 @@
     <script defer src="./js/todo-app.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function(){
-        // заголовок списка - он же идентификатор для LocalStorage
         title = 'Мамин Список Дел';
-        // Входной массив c делами если нет больше никаких дел в списке
-        // let doArr = [{name:'Первое Дело  - любить меня', done:false},
-        //              {name:'Второе Дело  - любить Папу', done:true},
-        //              {name:'Третье Дело  - любить Дочь', done:false},
-        //             ];
-        // let doArr = [];
         createTodoApp(title);
-
-      // document.addEventListener('DOMContentLoaded', function(){
-      //   // заголовок он же идентификатор
-      //   title = 'Мамин Список Дел';
-      //   // Входной массив делами если нет больше никаких дел в списке
-      //   // let doArr = [{name:'Первое Дело  - любить меня', done:false},
-      //   //              {name:'Второе Дело  - любить Папу', done:true},
-      //   //              {name:'Третье Дело  - любить Дочь', done:false},
-      //   //             ];
-
-      //   // let doArr = [];
-
-      //   // Проверяем хранилище
-      //   let my_storage = getFromLocalStorage(title);
-      //   if (my_storage.length) {
-      //     console.log('my_storage - ', my_storage)
-      //     createTodoApp(document.getElementById('todo-app'), title = title, my_storage);
-      //   } else {
-      //     console.log('typeof doArr', typeof doArr)
-      //     if (typeof doArr !== "undefined") {
-      //       console.log('doArr - ', doArr)
-      //       createTodoApp(document.getElementById('todo-app'), title = title, doArr);
-      //     } else {
-      //       createTodoApp(document.getElementById('todo-app'), title = title);
-      //     }
-      //   }
       });
     </script>
 </head>

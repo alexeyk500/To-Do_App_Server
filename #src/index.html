@@ -11,14 +11,11 @@
     <script defer src="./js/todo-app.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function(){
-        // заголовок списка - он же идентификатор для
-        title = 'Мой Список Дел';
-        // Входной массив c делами если нет больше никаких дел в списке
-        let doArr = [{name:'Первое Дело - учиться', done:true},
-                     {name:'Второе Дело - любить маму и папу', done:false}];
-        createTodoApp(title, doArr);
-      });
+      title = 'Мой Список Дел';
+      createTodoApp(title);
+      })
     </script>
+
 </head>
 <body>
   <div class="container mb-5">
